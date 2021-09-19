@@ -1,0 +1,36 @@
+.nameDiv {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: black solid 1px;
+  text-align: center;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+.namesBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  flex: 1;
+  /* background-color: yellow; */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-self: center;
+  margin: 10px;
+}
+
+input {
+  width: fit-content;
+  align-self: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
