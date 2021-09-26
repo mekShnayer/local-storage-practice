@@ -4,9 +4,9 @@ import './Input.css'
 
 
 function Input() {
-
   let localData = localStorage.getItem('names');
   const [names, setNames] = useState([]);
+  localStorage.setItem('names', JSON.stringify(names));
 
   const submit = () => {
     let result = {
