@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from 'react';
 import './Input.css'
+import Title from "./Title";
 
 
 function Input() {
@@ -34,16 +35,7 @@ function Input() {
   return (
     <div className='page'>
       <div className='header'>
-        <h1>
-          This is a local storage practice app.
-        </h1>
-        <h3>
-          please enter your name so we can storage it for safe keeping
-        </h3>
-        <input type='text' name='name' placeholder='name' id='name'></input>
-        <br></br>
-        <input type='text' name='lastname' placeholder='last-name' id='last-name'></input>
-        <br></br>
+        <Title />
         <input type='submit' onClick={submit}></input>
         <button onClick={clear}>clear local storage</button>
       </div>
