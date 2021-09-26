@@ -31,30 +31,45 @@ function Input() {
     setNames([]);
     console.log(' clear button clicked')
   }
-
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      submit();
+    }
+  }
+  window.addEventListener('keydown', handleEnterPress)
+//for now this enter press works only if we already pressed the submit button and not always listening on the page
   return (
     <div className='page'>
       <div className='header'>
         <Title />
-        <input type='submit' onClick={submit}></input>
+        <input type='submit' onClick={submit} 
+        // onKeyDown={handleEnterPress}
+        ></input>
         <button onClick={clear}>clear local storage</button>
       </div>
       <div className='namesBox'>
         {
-
           JSON.parse(localData).map((value, inx) => {
-            return (
-              <div key={inx} className='nameDiv'>
-                the name is : {value.name} - {value.last_name}
-              </div>
-            )
-
-          })
-
+            {
+              if (value.name != '' && value.last_name != '') {
+                return (
+                  <div key={inx} className='nameDiv'>
+                    {value.name[0].toUpperCase() + value.name.slice(1)}
+                    {value.last_name[0].toUpperCase() + value.last_name.slice(1)}
+                  </div>
+                )
+              } else {
+                return (
+                  <div key={inx} className='nameDiv'>
+                    {value.name} {value.last_name}
+                  </div>
+                )
+              }
+            }
+          }
+          )
         }
       </div>
-
-
     </div>
   )
 }
